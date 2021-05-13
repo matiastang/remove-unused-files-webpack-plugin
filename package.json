@@ -1,0 +1,37 @@
+{
+  "name": "remove-unused-files-webpack-plugin",
+  "version": "1.0.0",
+  "description": "移除未使用的文件或文件夹。",
+  "main": "index.js",
+  "scripts": {
+    "build:prod": "webpack --config webpack.config.babel.js --mode=production",
+    "build:dev": "webpack --config webpack.config.babel.js --mode=development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiastang/remove-unused-files-webpack-plugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matiastang/remove-unused-files-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/matiastang/remove-unused-files-webpack-plugin#readme",
+  "dependencies": {
+    "glob-all": "^3.2.1",
+    "inquirer": "^8.0.0",
+    "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.2",
+    "@babel/plugin-transform-runtime": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/register": "^7.13.16",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  }
+}

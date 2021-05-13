@@ -1,18 +1,11 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# git忽略文件
 
-# Other files and folders
-.settings/
+## npm | yarn | pnpm
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+node_modules
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+## vscode
+
+### 本地history目录
+
+.history
