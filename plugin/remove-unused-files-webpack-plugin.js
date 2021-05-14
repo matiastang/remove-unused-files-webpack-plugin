@@ -2,7 +2,7 @@
  * @Author: tangdaoyong
  * @Date: 2021-05-13 21:03:03
  * @LastEditors: tangdaoyong
- * @LastEditTime: 2021-05-13 21:50:32
+ * @LastEditTime: 2021-05-14 11:43:29
  * @Description: 移除无用的文件
  */
 import path from "path";
@@ -178,7 +178,7 @@ const syncApplyAfterEmit = (compiler, compilation, plugin) => {
 /**
  * 清除没有使用到的文件或文件夹
  */
-export class RemoveUnusedFilesWebpackPlugin {
+class RemoveUnusedFilesWebpackPlugin {
 
     constructor(options = {}) {
         // 挂载options

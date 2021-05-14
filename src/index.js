@@ -1,20 +1,10 @@
 /*
  * @Author: tangdaoyong
- * @Date: 2021-04-23 17:38:25
+ * @Date: 2021-05-13 23:32:03
  * @LastEditors: tangdaoyong
- * @LastEditTime: 2021-05-13 21:18:09
+ * @LastEditTime: 2021-05-13 23:33:28
  * @Description: webpack入口
  */
-import { testPrint } from './js/printTest';
-/**
- * 输出位置
- */
-testPrint('webpack入口')
+import RemoveUnusedFilesWebpackPlugin from '../plugin/remove-unused-files-webpack-plugin'
 
-// async function asyscTest(message) {
-//     const asyscTestPrint = await import(/* webpackChunkName: "asyncTest" */ 'test1/test2')
-//     asyscTestPrint(message)
-// }
-// asyscTest('异步测试')
-import asyscTestPrint from './js/asyncTest';
-asyscTestPrint('测试')
+export default RemoveUnusedFilesWebpackPlugin;

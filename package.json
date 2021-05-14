@@ -1,10 +1,13 @@
 {
   "name": "remove-unused-files-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "移除未使用的文件或文件夹。",
-  "main": "index.js",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "scripts": {
-    "build:prod": "webpack --config webpack.config.babel.js --mode=production",
+    "build:prod": "webpack --config webpack.config.babel.js --mode=production --display-error-details",
     "build:dev": "webpack --config webpack.config.babel.js --mode=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/matiastang/remove-unused-files-webpack-plugin.git"
   },
-  "author": "",
+  "author": "matiastang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/matiastang/remove-unused-files-webpack-plugin/issues"
@@ -27,16 +30,25 @@
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.2",
     "@babel/plugin-transform-runtime": "^7.14.2",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.2",
     "@babel/register": "^7.13.16",
+    "assert": "^2.0.0",
     "babel-loader": "^8.2.2",
+    "buffer": "^6.0.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "crypto-browserify": "^3.12.0",
     "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-bump": "^3.2.0",
     "gulp-json-editor": "^2.5.5",
     "gulp-load-plugins": "^2.0.6",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "tty-browserify": "^0.0.1",
+    "util": "^0.12.3",
     "webpack": "^5.37.0",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "3.3.12"
   }
 }
