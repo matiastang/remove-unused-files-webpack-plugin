@@ -1,14 +1,24 @@
 {
   "name": "remove-unused-files-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "移除未使用的文件或文件夹。",
-  "main": "./src/index.js",
-  "exports": {
-    ".": "./src/index.js"
-  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "lib",
+    "es",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
+    "build:esm": "gulp cleanES && cross-env BABEL_ENV=esm gulp buildJS",
+    "build:cjs": "gulp cleanLIB && cross-env BABEL_ENV=commonjs gulp buildJS",
     "build:prod": "webpack --config webpack.config.babel.js --mode=production --display-error-details",
     "build:dev": "webpack --config webpack.config.babel.js --mode=development",
+    "package": "pnpm run build:esm && pnpm run build:cjs",
+    "package:patch": "pnpm run build:esm && pnpm run build:cjs && gulp versionPatch && gulp gitVersionPush && gulp npmPackagePush",
+    "package:minor": "pnpm run build:esm && pnpm run build:cjs && gulp versionPatch && gulp gitVersionPush && gulp npmPackagePush",
+    "package:major": "pnpm run build:esm && pnpm run build:cjs && gulp versionPatch && gulp gitVersionPush && gulp npmPackagePush",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -37,9 +47,12 @@
     "babel-loader": "^8.2.2",
     "buffer": "^6.0.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "cross-env": "^7.0.3",
     "crypto-browserify": "^3.12.0",
+    "del": "^6.0.0",
     "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-bump": "^3.2.0",
     "gulp-json-editor": "^2.5.5",
     "gulp-load-plugins": "^2.0.6",

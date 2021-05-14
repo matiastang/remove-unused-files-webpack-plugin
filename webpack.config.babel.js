@@ -2,7 +2,7 @@
  * @Author: tangdaoyong
  * @Date: 2021-05-13 20:59:55
  * @LastEditors: tangdaoyong
- * @LastEditTime: 2021-05-14 11:44:28
+ * @LastEditTime: 2021-05-14 14:45:48
  * @Description: Webpack 配置文件
  */
 import path from 'path'
@@ -10,13 +10,13 @@ import path from 'path'
 /* - 常量 - */
 
 // 入口
-const ENTRYPATH = path.resolve(__dirname, './src/index.js');
+const ENTRYPATH = path.resolve(__dirname, './test/index.js');
 // 出口
 const OUTPUTPATH = path.resolve(__dirname, './build');
 
 /* - 自定义webpack插件 - */
 
-import RemoveUnusedFilesWebpackPlugin from './plugin/remove-unused-files-webpack-plugin';// 清除无用文件
+import RemoveUnusedFilesWebpackPlugin from './src/plugin/remove-unused-files-webpack-plugin';// 清除无用文件
 
 /* - webpack插件 - */
 
@@ -31,7 +31,7 @@ export default {
         new CleanWebpackPlugin(),
         // 清除无用文件
         new RemoveUnusedFilesWebpackPlugin({
-            patterns: ['src/**'],
+            patterns: ['test/**'],
             removeUnused: true
         })
     ],
@@ -67,19 +67,11 @@ export default {
             {
                 test: /\.js|jsx$/,            // 匹配文件
                 exclude: /node_modules/,      // 排除文件夹
-                // include: [/src/, /plugin/],               // 包含文件
                 use: [
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: [['@babel/preset-env',
-                                {
-                                    "targets": {
-                                        "chrome": "58",
-                                        "ie": "11"
-                                    }
-                                }
-                            ]]
+                            presets: ['@babel/preset-env']
                         }
                     } // babel 加载器
                 ]

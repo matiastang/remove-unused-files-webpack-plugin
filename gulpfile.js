@@ -10,16 +10,18 @@ const gulpTaskList = gulpfs.readdirSync('./gulp/tasks/');// 获取 gulp/tasks/ �
 // plugins.rename = require('gulp-rename');// 重命名
 // plugins.stripDebug = require('gulp-strip-debug');
 // plugins.vvinylPaths = require('vinyl-paths');
-// plugins.del = require('del');
+
 // 默认情况下，每次运行时候所有的文件都会传递并通过整个管道。通过使用 gulp-changed 可以只让更改过的文件传递过管道。这可以大大加快连续多次的运行。
 /*
 * 使用gulp-concat来组合文件
 * [gulp-json-editor](https://www.npmjs.com/package/gulp-json-editor)来改变一个文件的值
 * jsoncombine它加载所有json文件,并通过自定义函数运行它们作为json对象的哈希.每个json对象都保存在其原始文件名下.
 */
+plugins.babel = require('gulp-babel');// babel
 plugins.bump = require('gulp-bump');// 更新version，gulp-update-version
 plugins.shell = require('shelljs');// 执行脚本命令
 plugins.jeditor = require('gulp-json-editor');// 编辑json
+plugins.del = require('del');// 清理目录
 
 /**
  * @description: 同步任务
