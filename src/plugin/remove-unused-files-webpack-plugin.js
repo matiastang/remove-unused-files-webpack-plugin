@@ -2,7 +2,7 @@
  * @Author: tangdaoyong
  * @Date: 2021-05-13 21:03:03
  * @LastEditors: tangdaoyong
- * @LastEditTime: 2021-05-14 11:43:29
+ * @LastEditTime: 2021-05-18 13:49:34
  * @Description: 移除无用的文件
  */
 import path from "path";
@@ -110,13 +110,13 @@ const syncInquirerPrompt = (unused, globOptions) => {
         message: "已检测到的未使用的",
         name: "file",
         prefix: "是否删除",
-        suffix: "文件？(本地如果rm防护将无法恢复)"
+        suffix: "文件？"
     },{
         type: "confirm",
         message: "已检测到的未使用的",
         name: "dir",
         prefix: "是否删除",
-        suffix: "文件夹？(本地如果rm防护将无法恢复)",
+        suffix: "文件夹？",
         when: function(answers) { // 只有当选择删除文件后才询问是否删除文件夹，否则默认不删除
             return answers.file
         }

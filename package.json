@@ -1,6 +1,6 @@
 {
   "name": "remove-unused-files-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "移除未使用的文件或文件夹。",
   "main": "lib/index.js",
   "module": "es/index.js",
