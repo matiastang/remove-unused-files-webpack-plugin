@@ -9,3 +9,5 @@ node_modules
 ### 本地history目录
 
 .history
+
+.DS_Store
